@@ -1,0 +1,21 @@
+# Maintainers: Portergos Linux <portergoslinux@gmail.com>, EndeavourOS <info@endeavouros.com>
+
+pkgname=sonegx-keyring
+pkgver=1
+pkgrel=1
+pkgdesc="Sonegx keyring"
+arch=('any')
+url="https://github.com/gakramx"
+license=('GPL')
+install="${pkgname}.install"
+source=('Makefile'
+        'sonegx.gpg'
+	'sonegx-trusted')
+validpgpkeys=('2AFB46A8D06800B72219203CE48C7C870F9AD43C')
+md5sums=('SKIP'
+         'SKIP'
+         'SKIP')
+package() {
+	cd "${srcdir}"
+	make PREFIX=/usr DESTDIR=${pkgdir} install
+}
