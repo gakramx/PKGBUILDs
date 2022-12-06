@@ -1,4 +1,5 @@
-# Maintainer: Akram Abdeslem Chaima
+# Author: Erik Dubois <erik.dubois@gmail.com>
+# Maintainer: Akram Abdeslem Chaima <akram@riseup.net>
 pkgname=sonegx-mirrorlist
 _destname1="/etc/pacman.d"
 _destname2="/etc"

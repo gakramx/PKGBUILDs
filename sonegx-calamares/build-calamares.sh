@@ -1,3 +1,6 @@
+# Author: Erik Dubois <erik.dubois@gmail.com>
+# Maintainer: Akram Abdeslem Chaima <akram@riseup.net>
+
 #!/bin/bash
 
 destination1=$HOME"/CARLI/carli_repo/x86_64/"

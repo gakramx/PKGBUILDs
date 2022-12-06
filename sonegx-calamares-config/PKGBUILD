@@ -1,3 +1,4 @@
+# Author: Erik Dubois <erik.dubois@gmail.com>
 # Maintainer: Akram Abdeslem Chaima <aslackw@riseup.net>
 pkgname=sonegx-calamares-config
 _destname1="/etc"
