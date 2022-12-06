@@ -1,0 +1,15 @@
+diff -ruN a/src/engines/EngineChannel.cpp b/src/engines/EngineChannel.cpp
+--- a/src/engines/EngineChannel.cpp	2020-01-04 15:07:02.000000000 +0100
++++ b/src/engines/EngineChannel.cpp	2022-12-06 14:16:48.339010629 +0100
+@@ -425,6 +425,11 @@
+             InstrumentManager::LoadInstrumentInBackground(id, this);
+             Volume(mapping->Volume);
+         }
++        // Set volume to 0 when map not found
++        else{
++            dmsg(1,("Error: SONEGX bank not found.\n"));
++            Volume(0);
++        }
+     }
+ 
+ } // namespace LinuxSampler
