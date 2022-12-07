@@ -20,7 +20,7 @@ makedepends=('clang' 'dssi' 'ladspa' 'lv2' 'vst2sdk')
 optdepends=('dssi-host: for DSSI plugin'
             'lv2-host: for LV2 plugin')
 provides=("${_pkgname}" 'liblinuxsampler.so')
-conflicts=("${_pkgname}")
+conflicts=("${_pkgname}"'linuxsampler-vst')
 source=("https://download.linuxsampler.org/packages/${_pkgname}-${pkgver}.tar.bz2"
         "${_pkgname}-2.2.0-libdir.patch"
         "${_pkgname}-2.2.0-libgig_package.patch"
