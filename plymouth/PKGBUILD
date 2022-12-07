@@ -96,7 +96,7 @@ package() {
 
 	make DESTDIR="$pkgdir" install
 
-	install -Dm644 "$srcdir/arch-logo.png" "$pkgdir/usr/share/plymouth/arch-logo.png"
+	install -Dm644 "$srcdir/sonegx-logo.png" "$pkgdir/usr/share/plymouth/sonegx-logo.png"
 
 	install -Dm644 "$srcdir/plymouth.encrypt_hook" "$pkgdir/usr/lib/initcpio/hooks/plymouth-encrypt"
 	install -Dm644 "$srcdir/plymouth.encrypt_install" "$pkgdir/usr/lib/initcpio/install/plymouth-encrypt"
