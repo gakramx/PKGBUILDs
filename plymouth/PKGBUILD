@@ -2,7 +2,7 @@
 # Contributor: Sebastian Lau <lauseb644@gmail.com>
 # Contributor Damian01w <damian01w@gmail.com>
 # Contributor: Padfoot <padfoot@exemail.com.au>
-#
+# Contributor: Akram Abdeslem Chaima <akram@riseup.net>
 
 pkgname=plymouth
 pkgver=22.02.122
@@ -19,7 +19,7 @@ optdepends=('cantarell-fonts: For text output, e.g. during decryption'
 backup=('etc/plymouth/plymouthd.conf')
 
 source=("https://gitlab.freedesktop.org/${pkgname}/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
-      'arch-logo.png'
+      'sonegx-logo.png'
        'plymouth.encrypt_hook'
        'plymouth.encrypt_install'
        'lxdm-plymouth.service'
@@ -37,7 +37,7 @@ source=("https://gitlab.freedesktop.org/${pkgname}/${pkgname}/-/archive/${pkgver
 )
 
 sha256sums=('8921cd61a9f32f5f8903ceffb9ab0defaef8326253e1549ef85587c19b7f2ab6'
-            'de4369ad5a5511b684305e3a882c2c56204696514ea8ccdb556dd656eca062e7'
+            'e699d41b3d890ac472909b4e51052d29cae36a468dea009fe3738131ad266167'
             '748e0cfa0e10ab781bc202fceeed46e765ed788784f1b85945187b0f29eafad7'
             '373ec20fe4c47e693a0c45cc06dd906e35dd1d70a85546bd1d571391de11763a'
             '06b31999cf60f49e536c7a12bc1c4f75f2671feb848bf5ccb91a963147e2680d'
@@ -46,7 +46,7 @@ sha256sums=('8921cd61a9f32f5f8903ceffb9ab0defaef8326253e1549ef85587c19b7f2ab6'
             '3b17ed58b59a4b60d904c60bba52bae7ad685aa8273f6ceaae08a15870c0a9eb'
             '2a80e2cad8de428358647677afa166219589d3338c5f94838146c804a29e2769'
             '9eab84d8748591798e89c9bd301de313e3f6884ccff9f5219102006146acd8f4'
-            '50086877511c0890a2778359e969c1a390abec43b4401cbfad988465f09762bb'
+            '8f02d6176a791b237c84b52cba9ef8b7ddb9dd309d12e89847ffbb9588f399a0'
             'dec28b86ddea93704f8479d33e08f81cd7ff4ccaad57e9053c23bd046db2278a'
             '74908ba59cea53c6a9ab67bb6dec1de1616f3851a0fd89bb3c157a1c54e6633a'
             '71d34351b4313da01e1ceeb082d9776599974ce143c87e93f0a465f342a74fd2'
