@@ -2,8 +2,8 @@
 # Maintainer: Akram Abdeslem Chaima <aslackw@riseup.net>
 pkgname=sonegx-calamares-config
 _destname1="/etc"
-pkgver=22.06
-pkgrel=15
+pkgver=22.12
+pkgrel=1
 pkgdesc="calamares for SONEGX"
 arch=('any')
 url="https://github.com/gakramx"
