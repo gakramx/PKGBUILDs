@@ -1,0 +1,37 @@
+# Maintainer: Akram Abdeslem Chaima  <akram@riseup.net>
+
+pkgname=sonegx-editor
+pkgver=0.1
+pkgrel=1
+pkgdesc="LSCP file editor"
+arch=('x86_64')
+url="https://github.com/gakramx/sonegx-editor"
+license=('GPL3')
+depends=('qt5-base' 'cmake')
+source=("https://github.com/gakramx/sonegx-editor/archive/refs/tags/v${pkgver}.tar.gz")
+
+sha256sums=('SKIP')
+
+build() {
+    tar xf "v${pkgver}.tar.gz"
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    mkdir -p build
+    cd build
+    cmake .. \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_INSTALL_PREFIX=/usr \
+          -DCMAKE_INSTALL_LIBDIR=lib \
+          -DQT_QMAKE_EXECUTABLE=$(which qmake)
+    make
+}
+
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}/build"
+    make DESTDIR="${pkgdir}" install
+    install -D -m644 "${srcdir}/${pkgname}-${pkgver}/lscp.xml" \
+            "${pkgdir}/usr/share/mime/packages/lscp.xml"
+    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/sonegx-editor.desktop" \
+            "${pkgdir}/usr/share/applications/sonegx-editor.desktop"
+    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/icons/icon.png" \
+            "${pkgdir}/usr/share/icons/hicolor/128x128/apps/sonegx-editor.png"
+}
