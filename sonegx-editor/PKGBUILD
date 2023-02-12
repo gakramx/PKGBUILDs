@@ -1,7 +1,7 @@
 # Maintainer: Akram Abdeslem Chaima  <akram@riseup.net>
 
 pkgname=sonegx-editor
-pkgver=0.1
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="LSCP file editor"
 arch=('x86_64')
