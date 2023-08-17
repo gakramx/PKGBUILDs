@@ -1,7 +1,7 @@
 # Maintainer: Akram Abdeslem Chaima  <akram@riseup.net>
 
 pkgname=sonegx-video-player
-pkgver=0.1.1
+pkgver=0.1.2
 pkgrel=1
 pkgdesc="Reaction videos player"
 arch=('x86_64')
