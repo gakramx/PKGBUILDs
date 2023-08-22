@@ -1,8 +1,8 @@
 # Maintainer: Akram Abdeslem Chaima  <akram@riseup.net>
 
 pkgname=sonegx-video-player
-pkgver=0.1.2
-pkgrel=2
+pkgver=0.1.4
+pkgrel=1
 pkgdesc="Reaction videos player"
 arch=('x86_64')
 url="https://github.com/gakramx/sngx-player"
@@ -18,7 +18,7 @@ build() {
     mkdir -p build
     cd build
     cmake .. \
-          -DCMAKE_BUILD_TYPE=Debug \
+          -DCMAKE_BUILD_TYPE=Release \
           -DCMAKE_INSTALL_PREFIX=/usr \
           -DCMAKE_INSTALL_LIBDIR=lib \
           -DQT_QMAKE_EXECUTABLE=$(which qmake6)
