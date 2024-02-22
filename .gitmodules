@@ -1,0 +1,3 @@
+[submodule "sonegx-video-player/src/sonegx-player-android-1.5/QMpv"]
+	path = sonegx-video-player/src/sonegx-player-android-1.5/QMpv
+	url = https://github.com/gakramx/QMpv.git

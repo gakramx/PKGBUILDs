@@ -1,20 +1,39 @@
 # Maintainer: Akram Abdeslem Chaima  <akram@riseup.net>
 
 pkgname=sonegx-video-player
-pkgver=0.1.4
+pkgver=1.5
 pkgrel=1
 pkgdesc="Reaction videos player"
 arch=('x86_64')
-url="https://github.com/gakramx/sngx-player"
+url="https://github.com/gakramx/sonegx-player-android"
 license=('GPL3')
-depends=('qt6-base' 'qt6-5compat' 'qt6-multimedia' 'cmake')
-source=("https://github.com/gakramx/sngx-player/archive/refs/tags/${pkgver}.tar.gz")
+depends=('qt6-base' 'qt6-5compat' 'qt6-multimedia' 'mpv' 'cmake')
+source=("https://github.com/gakramx/sonegx-player-android/archive/refs/tags/${pkgver}.tar.gz")
 
 sha256sums=('SKIP')
 
 build() {
     tar xf "${pkgver}.tar.gz"
-    cd "${srcdir}/${pkgname}-${pkgver}"
+    cd "${srcdir}/sonegx-player-android-${pkgver}"
+
+    # Remove the empty directory if it exists
+    rm -rf QMpv
+
+    # Initialize the submodule
+    git submodule init QMpv
+
+    # Update the submodule recursively
+    git submodule update --init --recursive
+
+    # Navigate to the submodule directory
+    cd QMpv
+
+    # Update the submodule recursively
+    git submodule update --init --recursive
+
+    # Navigate back to the main source directory
+    cd ..
+    #cd "${srcdir}/${pkgname}-${pkgver}"
     mkdir -p build
     cd build
     cmake .. \
@@ -25,10 +44,11 @@ build() {
     make
 }
 package() {
-    cd "${srcdir}/${pkgname}-${pkgver}/build"
+   # cd "${srcdir}/${pkgname}-${pkgver}/build"
+    cd "${srcdir}/sonegx-player-android-${pkgver}/build"
     make DESTDIR="${pkgdir}" install
-    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/sonegx-video-player.desktop" \
+    install -Dm644 "${srcdir}/sonegx-player-android-${pkgver}/sonegx-video-player.desktop" \
             "${pkgdir}/usr/share/applications/sonegx-video-player.desktop"
-    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/images/sonegx-video-player.png" \
+    install -Dm644 "${srcdir}/sonegx-player-android-${pkgver}/images/sonegx-video-player.png" \
             "${pkgdir}/usr/share/icons/hicolor/128x128/apps/sonegx-video-player.png"
 }
